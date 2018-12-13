@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA1AC72F-2CD0-4247-9078-B9BD8C9216CC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Last_Army</RootNamespace>
+    <AssemblyName>Last Army</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Attributes\InjectAttribute.cs" />
+    <Compile Include="Core\Commands\Command.cs" />
+    <Compile Include="Core\Commands\Contracts\IExecutable.cs" />
+    <Compile Include="Core\Commands\MissionCommand.cs" />
+    <Compile Include="Core\Commands\OutputCommand.cs" />
+    <Compile Include="Core\Commands\SoldierCommand.cs" />
+    <Compile Include="Core\Commands\WareHouseCommand.cs" />
+    <Compile Include="Core\Contracts\IEngine.cs" />
+    <Compile Include="Core\Contracts\IGameController.cs" />
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Core\Factory\MissionFactory.cs" />
+    <Compile Include="Core\GameController.cs" />
+    <Compile Include="Core\IO\Contracts\IReader.cs" />
+    <Compile Include="Core\IO\Contracts\IWriter.cs" />
+    <Compile Include="Core\MissionController.cs" />
+    <Compile Include="Entities\Ammunitions\Ammunition.cs" />
+    <Compile Include="Entities\Army.cs" />
+    <Compile Include="Entities\Missions\Easy.cs" />
+    <Compile Include="Entities\Missions\Hard.cs" />
+    <Compile Include="Entities\Missions\Medium.cs" />
+    <Compile Include="Entities\Missions\Mission.cs" />
+    <Compile Include="Entities\Soldiers\Corporal.cs" />
+    <Compile Include="Entities\Soldiers\Ranker.cs" />
+    <Compile Include="Entities\WareHouse.cs" />
+    <Compile Include="Core\Factory\AmmunitionFactory.cs" />
+    <Compile Include="Core\Factory\SoldierFactory.cs" />
+    <Compile Include="Entities\Ammunitions\AutomaticMachine.cs" />
+    <Compile Include="Entities\Ammunitions\Gun.cs" />
+    <Compile Include="Entities\Ammunitions\Helmet.cs" />
+    <Compile Include="Entities\Ammunitions\Knife.cs" />
+    <Compile Include="Entities\Contracts\IAmmunition.cs" />
+    <Compile Include="Core\Factory\Contracts\IAmmunitionFactory.cs" />
+    <Compile Include="Entities\Contracts\IArmy.cs" />
+    <Compile Include="Entities\Contracts\IMission.cs" />
+    <Compile Include="Core\Contracts\IMissionController.cs" />
+    <Compile Include="Core\Factory\Contracts\IMissionFactory.cs" />
+    <Compile Include="Entities\Contracts\ISoldier.cs" />
+    <Compile Include="Core\Factory\Contracts\ISoldierFactory.cs" />
+    <Compile Include="Entities\Contracts\IWareHouse.cs" />
+    <Compile Include="Core\IO\ConsoleReader.cs" />
+    <Compile Include="Core\IO\ConsoleWriter.cs" />
+    <Compile Include="LastArmyMain.cs" />
+    <Compile Include="Entities\Ammunitions\MachineGun.cs" />
+    <Compile Include="Entities\Ammunitions\NightVision.cs" />
+    <Compile Include="Messages\OutputMessages.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\Ammunitions\RPG.cs" />
+    <Compile Include="Entities\Soldiers\Soldier.cs" />
+    <Compile Include="Entities\Soldiers\SpecialForce.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
