@@ -1,0 +1,6 @@
+﻿RegisterTrip {source} {destination} {planeType}
+RegisterPassenger {username}
+RegisterBag {username} {bagItem1} {bagItem2} {bagItemN}
+CheckIn {username} {tripId} {bagIndex1}, {bagIndex2}, {bagIndexN}
+TakeOff
+END
